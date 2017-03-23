@@ -1,0 +1,6 @@
+[client]
+database = Craigslist_Scraper
+HOST = localhost
+USER = dassowmd
+password = matt2645
+default-character-set = utf8
