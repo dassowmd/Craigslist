@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CraigslistAPI/API/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CraigslistAPI/CL_Listings/urls.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/views.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/__init__.py" afterPath="$PROJECT_DIR$/CraigslistAPI/CL_Listings/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/admin.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/admin.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/apps.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/apps.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/migrations/0001_initial.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/migrations/__init__.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/migrations/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/models.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/models.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/serializers.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/serializers.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CLData/tests.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/tests.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/__init__.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/settings.py" afterPath="$PROJECT_DIR$/CraigslistAPI/CL_Listings/settings.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/urls.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/urls.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/wsgi.py" afterPath="$PROJECT_DIR$/CraigslistAPI/CL_Listings/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Craigslist.iml" afterPath="$PROJECT_DIR$/.idea/Craigslist.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/manage.py" afterPath="$PROJECT_DIR$/CraigslistAPI/manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,10 +39,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/views.py">
+        <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="286">
+              <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -32,23 +50,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/urls.py">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="154">
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding>
-                <element signature="e#647#679#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/settings.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="418">
+              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,6 +129,17 @@
         <option value="$PROJECT_DIR$/CraigslistAPI/CLData/views.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/urls.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/settings.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/manage.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/CraigslistListings/urls.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/ListingAPI/views.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/Listings/models.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/Listings/views.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/Listings/urls.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/ListingAPI/urls.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/CL_Listings/settings.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/API/urls.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/CL_Listings/urls.py" />
+        <option value="$PROJECT_DIR$/CraigslistAPI/API/views.py" />
       </list>
     </option>
   </component>
@@ -186,7 +225,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CraigslistAPI" />
+              <option name="myItemId" value="CL_Listings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -204,7 +243,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CLData" />
+              <option name="myItemId" value="API" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -214,10 +253,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Debugger" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$USER_HOME$/PythonWebPlaying/mysite/mysite/settings.py" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistAPI\Listings" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CraigslistAPI/CLData" />
       <recent name="$PROJECT_DIR$/CraigslistAPI/CLData/migrations" />
@@ -514,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490234189293</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Reinstate SQLite for test and comment out MYSQL DB">
+      <created>1490234322986</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1490234322987</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -528,12 +577,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14965627" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49861714" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39871383" sideWeight="0.34097195" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.49624655" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17768377" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.49861714" order="3" side_tool="false" content_ui="tabs" />
@@ -545,7 +595,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3374613" sideWeight="0.49071515" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50928795" sideWeight="0.65902805" order="9" side_tool="false" content_ui="tabs" />
     </layout>
@@ -613,8 +662,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Anaconda2/Lib/site-packages/requests/packages/urllib3/packages/ordered_dict.py" />
-    <entry file="file://C:/Anaconda2/Lib/_abcoll.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/requests/structures.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/requests/utils.py" />
     <entry file="file://C:/Anaconda2/Lib/logging/__init__.py" />
@@ -653,42 +700,35 @@
     <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/CL_Data/models.py" />
     <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/CL_Data/apps.py" />
     <entry file="file://$USER_HOME$/PythonWebPlaying/mysite/mysite/settings.py" />
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/__init__.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/migrations/__init__.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/apps.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/__init__.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CL_Listings/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CL_Listings/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -696,7 +736,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my.cnf" />
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/migrations/0001_initial.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="13" />
@@ -711,20 +751,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CraigslistAPI/django-extensions" />
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CraigListRSSFeed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -732,38 +758,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/models.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CL_Listings/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CLData/views.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CL_Listings/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="506">
+          <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="e#647#688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="53" lean-forward="false" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CL_Listings/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/settings.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state relative-caret-position="154">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/CraigslistAPI/urls.py">
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="e#647#679#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

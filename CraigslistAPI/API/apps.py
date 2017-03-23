@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class CldataConfig(AppConfig):
-    name = 'CLData'
+    name = 'API'
