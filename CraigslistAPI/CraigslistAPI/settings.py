@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'CLData.apps.CldataConfig',
-    'django_extensions'
+    'CLData.apps.CldataConfig'
 ]
 
 MIDDLEWARE = [
@@ -76,16 +75,22 @@ WSGI_APPLICATION = 'CraigslistAPI.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# DATABASES = {
+#     'default':  {
+#         'ENGINE': 'django.db.backends.mysql',
+# 	'OPTIONS':
+# 		{
+# 		'read_default_file':'/home/dassowmd/Craigslist/CL_Config.cnf',
+# 		}
+#     }
+# }
+
 DATABASES = {
-    'default':  {
-        'ENGINE': 'django.db.backends.mysql',
-	'OPTIONS':
-		{
-		'read_default_file':'/home/dassowmd/Craigslist/CL_Config.cnf',
-		}
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'CraigslistSQLiteDB',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
