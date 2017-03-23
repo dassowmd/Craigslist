@@ -17,10 +17,13 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
-from .views import ListingAPIView
+from .views import ListingCreateAPIView, ListingDeleteAPIView, ListingDetailAPIView, ListingListAPIView, ListingUpdateAPIView
 
 urlpatterns = [
-    url(r'^$', ListingAPIView.as_view(), name='list'),
+    url(r'^$', ListingListAPIView.as_view(), name='list'),
+    url(r'^create/$', ListingCreateAPIView.as_view(), name='create'),
+    url(r'^(?P<pk>[\w-]+)/$', ListingDetailAPIView.as_view(), name='detail'),
+    url(r'^(?P<pk>[\w-]+)/edit/$', ListingUpdateAPIView.as_view(), name='update'),
+    url(r'^(?P<pk>\d+)/delete/$', ListingDeleteAPIView.as_view(), name='delete'),
     ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
