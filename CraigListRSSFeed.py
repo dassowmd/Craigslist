@@ -32,7 +32,7 @@ def post_JSON_API(dictionary):
         "RSS_Feed_String": rssString,
         }
 
-        r = requests.post('http://localhost:8000/api/listings/create/', auth=HTTPBasicAuth('dassowmd', 'asdfjkl;1'), json=JSON_data)
+        r = requests.post('http://localhost:8000/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
 
         # req = urllib2.Request('http://localhost:8000/api/listings/create/')
         # req.add_header('Content-Type', 'application/json')
