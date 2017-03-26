@@ -41,6 +41,8 @@ class ListingListAPIView(ListAPIView):
     filter_backends = [SearchFilter]
     search_fields = ['user', 'CL_Item_ID', 'KeyParam', 'RSS_Feed_String']
     pagination_class = LimitOffsetPagination
+    pagination_class.default_limit = 100
+    pagination_class.max_limit = 1000
 
     def get_queryset(self, *args, **kwargs):
         queryset_list = Listing.objects.all()
