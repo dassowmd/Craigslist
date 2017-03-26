@@ -13,28 +13,49 @@ from time import gmtime, strftime
 from time import mktime
 from datetime import datetime, timedelta
 import random
+import json
+import urllib2
 
 # import pyodbc
-import mysql.connector
+# import mysql.connector
 from random import shuffle
+from requests.auth import HTTPBasicAuth
 
-def writeToDB(dictionary):
-
-    conn = mysql.connector.connect(host="localhost", user="dassowmd",
-                                    password="matt2645", db="Craigslist_Scraper")
-    cursor = conn.cursor()
+def post_JSON_API(dictionary):
     CL_Item_ID = dictionary['url']
-    # print "connected to db"
     for key, value in dictionary.iteritems():
-        time = str(datetime.now())
-        sql = "INSERT INTO CLData_listing(CL_Item_ID, KeyParam, ValueParam, ScrapedDateTime, RSS_Feed_String) VALUES('" + CL_Item_ID + "', '" + key + "', '" + value + "', '" + time + "', '" + rssString + "');"
+        JSON_data = {
+        "Cl_Item_ID":CL_Item_ID,
+        "KeyParam": key,
+        "ValueParam": value,
+        "ScrapedDateTime": str(datetime.now()),
+        "RSS_Feed_String": rssString,
+        }
 
-        # print sql
-        cursor.execute(sql)
-        cursor.execute(sql)
-        conn.commit()
+        r = requests.post('http://localhost:8000/api/listings/create/', auth=HTTPBasicAuth('dassowmd', 'asdfjkl;1'), json=JSON_data)
 
-    conn.close()
+        # req = urllib2.Request('http://localhost:8000/api/listings/create/')
+        # req.add_header('Content-Type', 'application/json')
+        # authentication =("dassowmd", "asdfjkl;1")
+        # response = urllib2.urlopen(req, json.dumps(JSON_data), auth = authentication)
+
+# def write_to_MYSQL_DB(dictionary):
+#
+#     conn = mysql.connector.connect(host="localhost", user="dassowmd",
+#                                     password="matt2645", db="Craigslist_Scraper")
+#     cursor = conn.cursor()
+#     CL_Item_ID = dictionary['url']
+#     # print "connected to db"
+#     for key, value in dictionary.iteritems():
+#         time = str(datetime.now())
+#         sql = "INSERT INTO CLData_listing(CL_Item_ID, KeyParam, ValueParam, ScrapedDateTime, RSS_Feed_String) VALUES('" + CL_Item_ID + "', '" + key + "', '" + value + "', '" + time + "', '" + rssString + "');"
+#
+#         # print sql
+#         cursor.execute(sql)
+#         cursor.execute(sql)
+#         conn.commit()
+#
+#     conn.close()
 
 def getPostingInfo(soup):
     s = soup.findAll('p', attrs={'class': 'postinginfo', 'id':None}, recursive=True)
@@ -107,7 +128,7 @@ def parseRSSFeed(url, daysSinceUpdated = 1):
 
 
                 # print(results)
-                writeToDB(results)
+                post_JSON_API(results)
                 print"Success!! %s written to db" %url
 
                 # keys = results.get(keys)
