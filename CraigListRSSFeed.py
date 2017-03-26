@@ -41,8 +41,8 @@ def post_JSON_API(dictionary):
 
 # def write_to_MYSQL_DB(dictionary):
 #
-#     conn = mysql.connector.connect(host="localhost", user="dassowmd",
-#                                     password="matt2645", db="Craigslist_Scraper")
+#     conn = mysql.connector.connect(host="localhost", user="user",
+#                                     password="Need to enter password", db="Craigslist_Scraper")
 #     cursor = conn.cursor()
 #     CL_Item_ID = dictionary['url']
 #     # print "connected to db"
