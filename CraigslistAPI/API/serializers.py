@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Listing
+from models import Listing, ListingRehydrated
 
 
 class ListingSerializer(serializers.ModelSerializer):
@@ -28,3 +28,14 @@ class ListingCreateUpdateSerializer(serializers.ModelSerializer):
         model = Listing
         fields = '__all__'
 
+
+class IDListingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Listing
+        fields = ['Cl_Item_ID']
+
+
+class ListingRehydratedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ListingRehydrated
+        fields = '__all__'

@@ -14,3 +14,10 @@ class Listing(models.Model):
     def __str__(self):
         s = str(self.KeyParam) + ":" + str(self.ValueParam)
         return s
+
+class ListingRehydrated(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    Cl_Item_ID = models.CharField(max_length=1000)
+    ScrapedDateTime = models.CharField(max_length=45)
+    RSS_Feed_String = models.CharField(max_length=1000)
+    # jsonParameters = ""
