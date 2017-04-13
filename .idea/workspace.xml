@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SDK.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CraigListRSSFeed.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CraigsListRSSFeed.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/API/admin.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/API/models.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/API/serializers.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/API/urls.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/API/views.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +24,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="108" column="28" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
+            <state relative-caret-position="1245">
+              <caret line="93" column="22" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -39,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CraigsListRSSFeed.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CraigsListRSSFeed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CraigsListRSSFeed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="330">
               <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -71,10 +65,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
+            <state relative-caret-position="132">
               <caret line="19" column="105" lean-forward="true" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
               <folding />
             </state>
@@ -84,11 +78,21 @@
       <file leaf-file-name="SDK.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+            <state relative-caret-position="1034">
+              <caret line="47" column="81" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="81" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="response.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Anaconda2/Lib/site-packages/requests/packages/urllib3/response.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="403" column="0" lean-forward="false" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,13 +181,13 @@
         <option value="$PROJECT_DIR$/CraigslistAPI/CL_Listings/settings.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/CL_Listings/urls.py" />
         <option value="$PROJECT_DIR$/CraigListRSSFeed.py" />
-        <option value="$PROJECT_DIR$/SDK.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/admin.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/serializers.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/models.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/urls.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/views.py" />
         <option value="$PROJECT_DIR$/CraigsListRSSFeed.py" />
+        <option value="$PROJECT_DIR$/SDK.py" />
       </list>
     </option>
   </component>
@@ -310,7 +314,7 @@
       <recent name="C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistAPI\Listings" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CraigsListRSSFeed">
+  <component name="RunManager" selected="Python.SDK">
     <configuration default="false" name="Craigslist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -539,8 +543,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.CraigsListRSSFeed" />
-        <item index="1" class="java.lang.String" itemvalue="Python.SDK" />
+        <item index="0" class="java.lang.String" itemvalue="Python.SDK" />
+        <item index="1" class="java.lang.String" itemvalue="Python.CraigsListRSSFeed" />
         <item index="2" class="java.lang.String" itemvalue="Python.CraigListRSSFeed" />
         <item index="3" class="java.lang.String" itemvalue="Python.admin" />
         <item index="4" class="java.lang.String" itemvalue="Python.Craigslist" />
@@ -649,7 +653,21 @@
       <option name="project" value="LOCAL" />
       <updated>1490560127427</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Started adding server side listing rehydration, but didn't get it working. Started SDK tool.">
+      <created>1491831968887</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1491831968887</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update SDK to pull down all listings">
+      <created>1492040666327</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1492040666327</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -717,7 +735,9 @@
     <MESSAGE value="Add Create, Update, Read (Detail and List), and Detail APIs" />
     <MESSAGE value="Change Parser to save via API Create" />
     <MESSAGE value="Add Limit Offset pagination default and max limits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Limit Offset pagination default and max limits" />
+    <MESSAGE value="Started adding server side listing rehydration, but didn't get it working. Started SDK tool." />
+    <MESSAGE value="Update SDK to pull down all listings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update SDK to pull down all listings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -746,6 +766,21 @@
           <line>32</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SDK.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SDK.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SDK.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -757,7 +792,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="67" />
+      <option name="time" value="76" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -784,7 +819,6 @@
     <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/frame.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/feedparser.py" />
     <entry file="file://C:/Anaconda2/Lib/httplib.py" />
-    <entry file="file://C:/Anaconda2/Lib/site-packages/requests/packages/urllib3/response.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/requests/sessions.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/requests/api.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/requests/models.py" />
@@ -887,16 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
@@ -904,22 +928,6 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="105" lean-forward="true" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,16 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="108" column="28" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Anaconda2/Lib/site-packages/bs4/element.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -959,13 +957,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/requests/packages/urllib3/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="403" column="0" lean-forward="false" selection-start-line="403" selection-start-column="0" selection-end-line="403" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CraigsListRSSFeed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="330">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="47" column="81" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="93" column="22" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="19" column="105" lean-forward="true" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
+          <folding />
         </state>
       </provider>
     </entry>
