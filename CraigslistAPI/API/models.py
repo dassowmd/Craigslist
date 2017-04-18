@@ -6,8 +6,8 @@ from django.db import models
 class Listing(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     Cl_Item_ID = models.CharField(max_length=1000)
-    KeyParam = models.CharField(max_length=45)
-    ValueParam = models.CharField(max_length=10000)
+    KeyParam = models.CharField(max_length=1000)
+    ValueParam = models.CharField(max_length=20000)
     ScrapedDateTime = models.CharField(max_length=45)
     RSS_Feed_String = models.CharField(max_length=1000)
 

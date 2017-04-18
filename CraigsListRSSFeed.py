@@ -12,29 +12,35 @@ from datetime import datetime, timedelta
 import random
 import json
 import urllib2
+from multiprocessing.pool import ThreadPool
 
 # import pyodbc
 # import mysql.connector
 from random import shuffle
 from requests.auth import HTTPBasicAuth
 
+def post_JSON_Post_Detail(JSON_data):
+    try:
+        r = requests.post('http://108.59.217.3:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
+        # r = requests.post('http://192.168.2.2:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
+
+    except Exception as e:
+        print e
+        print r.status_code
+        print("Could not save via JSON API. Did you check the IP Address and Port Forwarding?")
+
 def post_JSON_API(dictionary):
     CL_Item_ID = dictionary['url']
     for key, value in dictionary.iteritems():
-        JSON_data = {
+        JSON_data = [{
         "Cl_Item_ID":CL_Item_ID,
         "KeyParam": key,
         "ValueParam": value,
         "ScrapedDateTime": str(datetime.now()),
         "RSS_Feed_String": rssString,
-        }
-
-        try:
-            r = requests.post('http://108.59.217.3:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
-
-        except:
-            print r.status_code
-            print("Could not save via JSON API. Did you check the IP Address and Port Forwarding?")
+        }]
+        # post_JSON_Post_Detail(JSON_data)
+        pool.map(post_JSON_Post_Detail, JSON_data)
 
 # def write_to_MYSQL_DB(dictionary):
 #
@@ -136,7 +142,8 @@ def parseRSSFeed(url, daysSinceUpdated = 1):
                 # scrapedOutput = scrapedOutput.append(results, ignore_index=True)
             else:
                 print"Skipping %s"% entry['id']
-        except:
+        except Exception as e:
+            print e
             print "Unable to parse %s" %url
             continue
 
@@ -162,7 +169,7 @@ results = {}
 
 scrapedOutput = pandas.DataFrame()
 daysSinceUpdated = 10
-
+pool = ThreadPool(40)
 rssString = raw_input("Please enter the entire RSS feed from craigslist\n")
 rssString = rssString[rssString.find("craigslist.org"):]
 
@@ -174,7 +181,7 @@ for s in sites:
     url = 'https://' + s + rssString
     try:
         parseRSSFeed(url, daysSinceUpdated)
-        sleep(60)
+        sleep(1)
     except:
         raise
 
