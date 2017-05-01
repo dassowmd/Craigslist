@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="Add Craigslist parser">
+    <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RSS_Parser.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RSS_Parser2.csv" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigsListRSSFeed.py" afterPath="$PROJECT_DIR$/CraigsListRSSFeed.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistAPI/API/models.py" afterPath="$PROJECT_DIR$/CraigslistAPI/API/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SDK.py" afterPath="$PROJECT_DIR$/SDK.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +26,21 @@
       <file leaf-file-name="SDK.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="113">
+              <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="20" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Flatten_Postings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Flatten_Postings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/../Hackathon/EBayAPI.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="113">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="49" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -47,20 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CraigsListRSSFeed.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CraigsListRSSFeed.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="21">
               <caret line="183" column="15" lean-forward="false" selection-start-line="183" selection-start-column="15" selection-end-line="183" selection-end-column="15" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -102,6 +102,10 @@
       <find>HTTPBasicAuth</find>
       <find>post_JSON_API</find>
       <find>pandas</find>
+      <find>print</find>
+      <find>search_Keywords</find>
+      <find>rss</find>
+      <find>enc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,10 +141,11 @@
         <option value="$PROJECT_DIR$/CraigslistAPI/API/serializers.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/urls.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/views.py" />
-        <option value="$PROJECT_DIR$/SDK.py" />
         <option value="$PROJECT_DIR$/CraigsListRSSFeed.py" />
-        <option value="$PROJECT_DIR$/../Hackathon/EBayAPI.py" />
         <option value="$PROJECT_DIR$/CraigslistAPI/API/models.py" />
+        <option value="$PROJECT_DIR$/SDK.py" />
+        <option value="$PROJECT_DIR$/../Hackathon/EBayAPI.py" />
+        <option value="$PROJECT_DIR$/Flatten_Postings.py" />
       </list>
     </option>
   </component>
@@ -185,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -251,6 +255,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,7 +284,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.EBayAPI">
+  <component name="RunManager" selected="Python.Flatten_Postings">
     <configuration default="false" name="CraigListRSSFeed" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -295,24 +300,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CraigListRSSFeed.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CraigslistAPI/CLData" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Craigslist" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CraigslistAPI/CLData/admin.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
@@ -365,6 +352,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Craigslist" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Hackathon/EBayAPI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Flatten_Postings" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Craigslist" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Flatten_Postings.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -468,18 +473,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.CraigListRSSFeed" />
-      <item index="1" class="java.lang.String" itemvalue="Python.admin" />
-      <item index="2" class="java.lang.String" itemvalue="Python.SDK" />
-      <item index="3" class="java.lang.String" itemvalue="Python.CraigsListRSSFeed" />
-      <item index="4" class="java.lang.String" itemvalue="Python.EBayAPI" />
+      <item index="1" class="java.lang.String" itemvalue="Python.SDK" />
+      <item index="2" class="java.lang.String" itemvalue="Python.CraigsListRSSFeed" />
+      <item index="3" class="java.lang.String" itemvalue="Python.EBayAPI" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Flatten_Postings" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.EBayAPI" />
-        <item index="1" class="java.lang.String" itemvalue="Python.CraigsListRSSFeed" />
-        <item index="2" class="java.lang.String" itemvalue="Python.SDK" />
-        <item index="3" class="java.lang.String" itemvalue="Python.CraigListRSSFeed" />
-        <item index="4" class="java.lang.String" itemvalue="Python.admin" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Flatten_Postings" />
+        <item index="1" class="java.lang.String" itemvalue="Python.SDK" />
+        <item index="2" class="java.lang.String" itemvalue="Python.EBayAPI" />
+        <item index="3" class="java.lang.String" itemvalue="Python.CraigsListRSSFeed" />
+        <item index="4" class="java.lang.String" itemvalue="Python.CraigListRSSFeed" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -625,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492042159828</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add Ebay API, started implementing threading">
+      <created>1492485443309</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1492485443309</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -641,7 +653,7 @@
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1519871" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15413533" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.49861714" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39871383" sideWeight="0.34097195" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33666667" sideWeight="0.49071515" order="6" side_tool="false" content_ui="tabs" />
@@ -649,9 +661,9 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44444445" sideWeight="0.49624655" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17768377" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.49861714" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5088889" sideWeight="0.65902805" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5088889" sideWeight="0.65902805" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -697,7 +709,8 @@
     <MESSAGE value="Started adding server side listing rehydration, but didn't get it working. Started SDK tool." />
     <MESSAGE value="Update SDK to pull down all listings" />
     <MESSAGE value="Add Craigslist parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Craigslist parser" />
+    <MESSAGE value="Add Ebay API, started implementing threading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Ebay API, started implementing threading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -718,23 +731,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/SDK.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../Hackathon/EBayAPI.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../Hackathon/EBayAPI.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../Hackathon/EBayAPI.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="102" />
+          <line>48</line>
+          <option name="timeStamp" value="128" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -747,19 +745,12 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="118" />
+      <option name="time" value="138" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/io/parsers.py" />
-    <entry file="file://C:/Anaconda2/Lib/site-packages/OpenSSL/SSL.py" />
-    <entry file="file://C:/Anaconda2/Lib/site-packages/requests/packages/urllib3/contrib/pyopenssl.py" />
-    <entry file="file://C:/Anaconda2/Lib/socket.py" />
-    <entry file="file://C:/Anaconda2/Lib/site-packages/cryptography/hazmat/bindings/openssl/binding.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2016.3/system/python_stubs/884504192/time.py" />
-    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/index.py" />
-    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/frame.py" />
     <entry file="file://C:/Anaconda2/Lib/httplib.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/requests/models.py" />
     <entry file="file://C:/Anaconda2/Lib/site-packages/pyasn1/type/tagmap.py" />
@@ -903,17 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,15 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Anaconda2/Lib/multiprocessing/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="753" column="0" lean-forward="false" selection-start-line="753" selection-start-column="0" selection-end-line="753" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="354" column="0" lean-forward="false" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="597" column="0" lean-forward="false" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="301" column="0" lean-forward="false" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,13 +936,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/internals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="3837" column="0" lean-forward="false" selection-start-line="3837" selection-start-column="0" selection-end-line="3837" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="1751" column="0" lean-forward="false" selection-start-line="1751" selection-start-column="0" selection-end-line="1751" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="585" column="0" lean-forward="false" selection-start-line="585" selection-start-column="0" selection-end-line="585" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CraigsListRSSFeed.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
+        <state relative-caret-position="21">
           <caret line="183" column="15" lean-forward="false" selection-start-line="183" selection-start-column="15" selection-end-line="183" selection-end-column="15" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
@@ -986,17 +990,51 @@
     <entry file="file://$PROJECT_DIR$/../Hackathon/EBayAPI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="49" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CraigslistAPI/API/models.py">
+    <entry file="file://$PROJECT_DIR$/SDK.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        <state relative-caret-position="113">
+          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="1121" column="0" lean-forward="false" selection-start-line="1121" selection-start-column="0" selection-end-line="1121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="1088" column="0" lean-forward="false" selection-start-line="1088" selection-start-column="0" selection-end-line="1088" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda2/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="1949" column="0" lean-forward="false" selection-start-line="1949" selection-start-column="0" selection-end-line="1949" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Flatten_Postings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding />
         </state>
       </provider>
