@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CraigslistPosting.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Craigslist_Posting_Rehydrated.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Flatten_Postings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigsListRSSFeed.py" afterPath="$PROJECT_DIR$/CraigsListRSSFeed.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SDK.py" afterPath="$PROJECT_DIR$/SDK.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -654,7 +655,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493610604256</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Sped up appending by creating a list of dictionaries then converting list to df">
+      <created>1493783323579</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1493783323579</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -727,7 +735,8 @@
     <MESSAGE value="Add Craigslist parser" />
     <MESSAGE value="Add Ebay API, started implementing threading" />
     <MESSAGE value="Got posting flattener working so that it now pivots the data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Got posting flattener working so that it now pivots the data." />
+    <MESSAGE value="Sped up appending by creating a list of dictionaries then converting list to df" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sped up appending by creating a list of dictionaries then converting list to df" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1018,7 +1027,7 @@
         <state relative-caret-position="189">
           <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
