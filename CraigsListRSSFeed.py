@@ -21,7 +21,7 @@ from requests.auth import HTTPBasicAuth
 
 def post_JSON_Post_Detail(JSON_data):
     try:
-        r = requests.post('http://108.59.217.3:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
+        r = requests.post('http://108.59.216.215:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
         # r = requests.post('http://192.168.2.2:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
 
     except Exception as e:
