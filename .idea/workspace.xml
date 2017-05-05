@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="Updating CraiglistPosting.csv and Craigslist_Posting_Rehydrated.csv files.">
+    <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigsListRSSFeed.py" afterPath="$PROJECT_DIR$/CraigsListRSSFeed.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigslistPosting.csv" afterPath="$PROJECT_DIR$/CraigslistPosting.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Craigslist_Posting_Rehydrated.csv" afterPath="$PROJECT_DIR$/Craigslist_Posting_Rehydrated.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Flatten_Postings.py" afterPath="$PROJECT_DIR$/Flatten_Postings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SDK.py" afterPath="$PROJECT_DIR$/SDK.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -676,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493783446130</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updating CraiglistPosting.csv and Craigslist_Posting_Rehydrated.csv files.">
+      <created>1494005475883</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1494005475884</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
