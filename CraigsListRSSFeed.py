@@ -32,6 +32,8 @@ def post_JSON_Post_Detail(JSON_data):
 def post_JSON_API(dictionary):
     CL_Item_ID = dictionary['url']
     for key, value in dictionary.iteritems():
+        if key == 'VIN':
+            pass
         JSON_data = [{
         "Cl_Item_ID":CL_Item_ID,
         "KeyParam": key,
@@ -61,6 +63,7 @@ def post_JSON_API(dictionary):
 #     conn.close()
 
 def getPostingInfo(soup):
+    results = {}
     s = soup.findAll('p', attrs={'class': 'postinginfo', 'id':None}, recursive=True)
     for i in s:
         # print i
@@ -71,8 +74,10 @@ def getPostingInfo(soup):
             results[key] = value
         except:
             continue
+    return results
 
 def getAttributes(soup):
+    results = {}
     attrgroup = soup.find_all(name = 'p', class_="attrgroup", recursive=True)
     # print attrgroup
     for attr in attrgroup:
@@ -86,19 +91,23 @@ def getAttributes(soup):
                 results[key] = value
             except:
                 continue
+    return results
 
 def getPostingBody(soup):
+    results = {}
     s = soup.find('section', attrs={'id':'postingbody'}).findAll(text=False, recursive=False)
     bodyString = ''
     for i in s:
         bodyString += str(i.get_text().encode('utf-8'))
     results['body'] = bodyString
+    return results
 
 def parseRSSFeed(url, daysSinceUpdated = 1):
     parse = feedparser.parse(url)
     parse.status
     count = 1
     for entry in parse['entries']:
+        results = {}
         try:
             dateUpdated = convertRSSTime(entry['updated_parsed'])
             if dateUpdated > datetime.now() - timedelta(days=daysSinceUpdated):
@@ -115,9 +124,9 @@ def parseRSSFeed(url, daysSinceUpdated = 1):
                 results['url'] = url
 
                 # Parse out Posting Info, Attribute and Body tags
-                results.items().append(getPostingInfo(soup))
-                results.items().append(getAttributes(soup))
-                results.items().append(getPostingBody(soup))
+                results.update(getPostingInfo(soup))
+                results.update(getAttributes(soup))
+                results.update(getPostingBody(soup))
                 # Pull RSS information
                 results['Publish Date'] = entry['published']
                 results['Update Date'] = entry['updated']
@@ -165,7 +174,6 @@ sites = ['akroncanton','albanyga','albany','albuquerque','altoona','amarillo','a
 shuffle(sites)
 # Shuffle sites so that I don't always do the same ones first (In case there is an error)
 fp = 'C:\Users\dasso\Desktop\Craigslist\Trucks_' + str(datetime.now()) + '.csv'
-results = {}
 
 scrapedOutput = pandas.DataFrame()
 daysSinceUpdated = 10
@@ -174,7 +182,7 @@ rssString = raw_input("Please enter the entire RSS feed from craigslist\n")
 rssString = rssString[rssString.find("craigslist.org"):]
 
 if rssString == "":
-    rssString = '.craigslist.org/search/cta?auto_bodytype=6&auto_bodytype=7&auto_bodytype=9&auto_cylinders=5&auto_drivetrain=3&format=rss'
+    rssString = '.craigslist.org/search/cta?auto_bodytype=6&auto_bodytype=7&auto_bodytype=9&format=rss'
 for s in sites:
     print('Searching ' + s)
     # url = 'https://' + s + '.craigslist.org/search/ppa?format=rss&query=washer%20dryer'

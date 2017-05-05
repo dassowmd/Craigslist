@@ -1,15 +1,23 @@
 import pandas as pd
+from tqdm import tqdm
 
+
+def save_df(self, df, file_path):
+    try:
+        df.to_csv(file_path, encoding='utf8')
+    except:
+        raw_input("Unable to save file. Is the file already open? Press enter to try again")
+        save_df(self, df, file_path)
 
 class flatten():
-    def flatten(self):
-        df = pd.read_csv("C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistPosting.csv", encoding='utf8')
+    def flatten(self, url_read="C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistPosting.csv", url_write="C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\Craigslist_Posting_Rehydrated.csv"):
+        df = pd.read_csv(url_read, encoding='utf8')
 
 
         unique_IDs = df.Cl_Item_ID.unique()
 
         listing_rehydrated_list = []
-        for ID in unique_IDs:
+        for ID in tqdm(unique_IDs):
             details = pd.DataFrame(df[df['Cl_Item_ID'] == ID])
             listing_rehydrated = dict()
             # print details['Cl_Item_ID']
@@ -22,4 +30,9 @@ class flatten():
                 listing_rehydrated[d['KeyParam']] = d['ValueParam']
             listing_rehydrated_list.append(listing_rehydrated)
         listing_rehydrated_df = pd.DataFrame(listing_rehydrated_list)
-        listing_rehydrated_df.to_csv("C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\Craigslist_Posting_Rehydrated.csv", encoding='utf8')
+        save_df(self, listing_rehydrated_df, url_write)
+
+
+
+# f = flatten()
+    # f.flatten()

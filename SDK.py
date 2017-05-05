@@ -6,6 +6,7 @@ from multiprocessing.pool import ThreadPool
 import pandas as pd
 import datetime
 from Flatten_Postings import flatten
+from tqdm import tqdm
 
 def getJSONDetail(url):
     try:
@@ -25,12 +26,12 @@ def getCl_Item_IDList(url):
 #     r = requests.get('http://108.59.217.3:54321/api/listings/?CL')
 
 def getAllIDs(url = 'http://108.59.216.215:54321/api/listings/idlist'):
-    url = 'http://192.168.1.138:54321/api/listings/idlist'
+    # url = 'http://192.168.1.138:54321/api/listings/idlist'
     CL_Item_IDs = getCl_Item_IDList(url)
     IDs =[]
     while url != None:
         CL_Item_IDs = getCl_Item_IDList(url)
-        IDs.append(CL_Item_IDs['results'])
+        IDs.append(CL_Item_IDs['results'].encode('utf8'))
         url = CL_Item_IDs['next']
     return IDs
 
@@ -42,7 +43,7 @@ def getAllDetails(url):
     for i in range(1, count/100):
     # for i in range(1, 100):
         url = 'http://108.59.216.215:54321/api/listings/?format=json&limit=100&offset=' + str(i * 100)
-        url = 'http://192.168.1.138:54321/api/listings/?format=json&limit=100&offset=' + str(i * 100)
+        # url = 'http://192.168.1.138:54321/api/listings/?format=json&limit=100&offset=' + str(i * 100)
         URL_list.append(url)
 
    # Iterate through U+
@@ -73,18 +74,14 @@ def getCount(url):
 # json_data = getJSONDetail()
 # print(json_data)
 url = 'http://108.59.216.215:54321/api/listings/?format=json&limit=100'
-url = 'http://192.168.1.138:54321/api/listings/?format=json&limit=100'
+# url = 'http://192.168.1.138:54321/api/listings/?format=json&limit=100'
 
 results = getAllDetails(url)
 saveFilePath = 'C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist'
 fullPath = saveFilePath + '/CraigslistPosting.csv'
 print "Saving results to %s" % fullPath
 results.to_csv(fullPath, encoding='utf8')
-print results
-
-
-
-
-
+flatten_write_path = "C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\Craigslist_Posting_Rehydrated.csv"
+flatten().flatten(fullPath, flatten_write_path)
 
 
