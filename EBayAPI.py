@@ -17,26 +17,29 @@ from requests.auth import HTTPBasicAuth
 from collections import OrderedDict
 
 def flatten(json_object, container=None, name=''):
-    if container is None:
-        container = OrderedDict()
-    if isinstance(json_object, dict):
-        for key in json_object:
-            flatten(json_object[key], container=container, name=name + key + '_')
-    elif isinstance(json_object, list):
-        for n, item in enumerate(json_object, 1):
-            flatten(item, container=container, name=name + str(n) + '_')
-    else:
-        container[str(name[:-1])] = str(json_object)
-    return container
+    try:
+        if container is None:
+            container = OrderedDict()
+        if isinstance(json_object, dict):
+            for key in json_object:
+                flatten(json_object[key], container=container, name=name + key + '_')
+        elif isinstance(json_object, list):
+            for n, item in enumerate(json_object, 1):
+                flatten(item, container=container, name=name + str(n) + '_')
+        else:
+            container[str(name[:-1])] = str(json_object)
+        return container
+    except Exception as e:
+        pass
 
 def post_JSON_API(dictionary):
     flat_dict = flatten(dictionary)
-    item_ID = flat_dict['itemId']
+    item_ID = flat_dict['itemId'].encode('utf8')
     try:
         for key, value in flat_dict.iteritems():
-            print item_ID.encode('utf-8') + "-" + key.encode('utf-8') + ":" + value.encode('utf-8')
+            print item_ID + "-" + key.encode('utf-8') + ":" + value.encode('utf-8')
             JSON_data = {
-            "Cl_Item_ID":str(item_ID).encode('utf-8'),
+            "Cl_Item_ID":str(item_ID),
             "KeyParam": str(key).encode('utf-8'),
             "ValueParam": str(value).encode('utf-8')[0:20000],
             "ScrapedDateTime": str(datetime.now()).encode('utf-8'),
@@ -74,11 +77,12 @@ if __name__ == '__main__':
             dictstr = api.response.dict()
             df = pd.DataFrame(dictstr)
 
-            pool.map(post_JSON_API, dictstr['searchResult']['item'])
-           # for item in dictstr['searchResult']['item']:
+            # for i in dictstr['searchResult']['item']:
+            #     post_JSON_API(i)
            #    print item
               # for k, v in item.iteritems():
               #    print k,":", v
+            pool.map(post_JSON_API, dictstr['searchResult']['item'])
 
             if pageNum <= dictstr['paginationOutput']['totalPages']:
                 pageNum = pageNum + 1
@@ -87,8 +91,8 @@ if __name__ == '__main__':
 
         print ('Finished searching for %s' % search_Keywords)
     # except ConnectionError as e:
-    except:
+    except Exception as e:
         pass
-        # print(e)
+        print(e)
        # print(e.response.dict())
 
