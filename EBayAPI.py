@@ -2,19 +2,15 @@ import datetime
 from ebaysdk.exception import ConnectionError
 from ebaysdk.finding import Connection
 import pandas as pd
-import json
-import csv
-import responses
-from lxml import objectify
-from bs4 import BeautifulSoup
-import multiprocessing
 from multiprocessing import freeze_support
 from multiprocessing.pool import ThreadPool
 from datetime import datetime, timedelta
-
+import sys
 import requests
 from requests.auth import HTTPBasicAuth
 from collections import OrderedDict
+import time
+import argparse
 
 def flatten(json_object, container=None, name=''):
     try:
@@ -27,9 +23,10 @@ def flatten(json_object, container=None, name=''):
             for n, item in enumerate(json_object, 1):
                 flatten(item, container=container, name=name + str(n) + '_')
         else:
-            container[str(name[:-1])] = str(json_object)
+            container[str(name[:-1])] = str(json_object).encode('utf8')
         return container
     except Exception as e:
+        print e
         pass
 
 def post_JSON_API(dictionary):
@@ -43,53 +40,69 @@ def post_JSON_API(dictionary):
             "KeyParam": str(key).encode('utf-8'),
             "ValueParam": str(value).encode('utf-8')[0:20000],
             "ScrapedDateTime": str(datetime.now()).encode('utf-8'),
-            "RSS_Feed_String": str(search_Keywords).encode('utf-8'),
+            "RSS_Feed_String": str(search_keywords).encode('utf-8'),
             }
 
             try:
                 r = requests.post('http://108.59.216.215:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
-                if r.status_code != 201:
-                    raw_input("pause")
                 # r = requests.post('http://192.168.2.2:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
 
             except Exception as e:
                 print e
-                # print r.status_code
                 print("Could not save via JSON API. Did you check the IP Address and Port Forwarding?")
                 pass
+
+        print (item_ID + '-' + flat_dict['title'] + ' Saved to database')
     except Exception as e:
         print e
         pass
+
+def call_Ebay_API(page_num, search_keywords, try_count=1):
+    try:
+        api = Connection(appid='MattDass-FLCompar-PRD-12442a3e5-6825c4fa', config_file=None)
+        response = api.execute('findItemsAdvanced', {'keywords': search_keywords, 'paginationInput': {'pageNumber': page_num}})
+        dictstr = api.response.dict()
+        df = pd.DataFrame(dictstr)
+
+        # for i in dictstr['searchResult']['item']:
+        #     post_JSON_API(i)
+
+        pool = ThreadPool(10)
+        pool.map(post_JSON_API, dictstr['searchResult']['item'])
+
+        if page_num <= dictstr['paginationOutput']['totalPages']:
+            page_num = page_num + 1
+        else:
+            page_num = 0
+        return page_num
+    except Exception as e:
+        print e
+        if try_count <= 3:
+            time.sleep(10)
+            try_count +=1
+            call_Ebay_API(page_num, try_count)
+        else:
+            raise ValueError("No luck. Tried connecting 3 times and it still didn't work")
 
 if __name__ == '__main__':
     freeze_support()
     output = pd.DataFrame()
 
-    search_Keywords = raw_input("What would you like to search for?")
+    parser = argparse.ArgumentParser(description='Gather Ebay Postings')
+    parser.add_argument('Search_Key', metavar='N', type=str, nargs='+',
+                        help='the Ebay search term')
+
+    if len(sys.argv) > 1:
+        search_keywords = sys.argv[1]
+    else:
+        search_keywords = raw_input("What would you like to search for?")
     try:
-        api = Connection(appid='MattDass-FLCompar-PRD-12442a3e5-6825c4fa', config_file=None)
-        # if pageNum:
-        pageNum = 1
-        pool = ThreadPool(10)
-        # pool = multiprocessing.Pool()
-        while pageNum != 0:
-            response = api.execute('findItemsAdvanced', {'keywords': search_Keywords, 'paginationInput':{'pageNumber':pageNum}})
-            dictstr = api.response.dict()
-            df = pd.DataFrame(dictstr)
+        page_num = 1
+        while page_num !=0:
+            page_num = call_Ebay_API(page_num=page_num, search_keywords = search_keywords)
 
-            # for i in dictstr['searchResult']['item']:
-            #     post_JSON_API(i)
-           #    print item
-              # for k, v in item.iteritems():
-              #    print k,":", v
-            pool.map(post_JSON_API, dictstr['searchResult']['item'])
 
-            if pageNum <= dictstr['paginationOutput']['totalPages']:
-                pageNum = pageNum + 1
-            else:
-                pageNum = 0
-
-        print ('Finished searching for %s' % search_Keywords)
+        print ('Finished searching for %s' % search_keywords)
     # except ConnectionError as e:
     except Exception as e:
         pass

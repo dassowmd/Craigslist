@@ -13,6 +13,7 @@ import random
 import json
 import urllib2
 from multiprocessing.pool import ThreadPool
+from tqdm import tqdm
 
 # import pyodbc
 # import mysql.connector
@@ -23,26 +24,35 @@ def post_JSON_Post_Detail(JSON_data):
     try:
         r = requests.post('http://108.59.216.215:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
         # r = requests.post('http://192.168.2.2:54321/api/listings/create/', auth=HTTPBasicAuth('user', 'craigslist'), json=JSON_data)
+        if r.status_code == 400:
+            raise ValueError('400 error received')
 
     except Exception as e:
         print e
-        print r.status_code
-        print("Could not save via JSON API. Did you check the IP Address and Port Forwarding?")
+        # print r.status_code
+        print("Could not save via JSON API. Did you check the IP Address?")
 
 def post_JSON_API(dictionary):
     CL_Item_ID = dictionary['url']
-    for key, value in dictionary.iteritems():
-        if key == 'VIN':
-            pass
-        JSON_data = [{
-        "Cl_Item_ID":CL_Item_ID,
-        "KeyParam": key,
-        "ValueParam": value,
-        "ScrapedDateTime": str(datetime.now()),
-        "RSS_Feed_String": rssString,
-        }]
-        # post_JSON_Post_Detail(JSON_data)
-        pool.map(post_JSON_Post_Detail, JSON_data)
+    for key, value in tqdm(dictionary.iteritems()):
+        JSON_data = {
+            "Cl_Item_ID": CL_Item_ID,
+            "KeyParam": key,
+            "ValueParam": value,
+            "ScrapedDateTime": str(datetime.now()),
+            "RSS_Feed_String": rssString,
+        }
+        post_JSON_Post_Detail(JSON_data)
+
+        # JSON_data = [{
+        #     "Cl_Item_ID":CL_Item_ID,
+        #     "KeyParam": key,
+        #     "ValueParam": value,
+        #     "ScrapedDateTime": str(datetime.now()),
+        #     "RSS_Feed_String": rssString,
+        # }]
+        # pool.map(post_JSON_Post_Detail, JSON_data)
+        # pool.join()
 
 # def write_to_MYSQL_DB(dictionary):
 #
@@ -112,6 +122,12 @@ def parseRSSFeed(url, daysSinceUpdated = 1):
             dateUpdated = convertRSSTime(entry['updated_parsed'])
             if dateUpdated > datetime.now() - timedelta(days=daysSinceUpdated):
 
+                # proxies = requests.get('http://proxy.minjja.lt/pac/?type=https&loc=France')
+                # proxies = requests.get('https://spinproxies.com/api/v1/protocols=https?proxylist?country_code=US&key=ctklov2d6oy63pa5jysrqn3nxzt0kx')
+                # proxy_list = {'https':'https://197.33.180.151:3128'}
+                # p = json.loads(proxies.content)
+
+                # response = requests.get(url, proxies=proxy_list)
                 url = entry['link']
                 response = requests.get(url)
                 soup = BeautifulSoup(response.content, 'html.parser')
@@ -168,21 +184,23 @@ def convertRSSTime(RSSParsedTime):
     return dt
 
 # sites = ['albany', 'athensga', 'atlanta', 'brunswick', 'columbusga', 'macon', 'nwga', 'savannah', 'statesboro', 'valdosta']
-sites = ['akroncanton','albanyga','albany','albuquerque','altoona','amarillo','ames','anchorage','annapolis','annarbor','appleton','asheville','ashtabula','athensga','athensohio','atlanta','auburn','augusta','austin','bakersfield','baltimore','batonrouge','battlecreek','beaumont','bellingham','bemidji','bend','billings','binghamton','bham','bismarck','bloomington','bn','boise','boone','boston','boulder','bgky','bozeman','brainerd','brownsville','brunswick','buffalo','butte','capecod','catskills','cedarrapids','cenla','centralmich','cnj','chambana','charleston','charlestonwv','charlotte','charlottesville','chattanooga','chautauqua','chicago','chico','chillicothe','cincinnati','clarksville','cleveland','clovis','collegestation','cosprings','columbiamo','columbia','columbusga','columbus','cookeville','corpuschristi','corvallis','chambersburg','dallas','danville','daytona','dayton','decatur','nacogdoches','delaware','delrio','denver','desmoines','detroit','dothan','dubuque','duluth','eastco','newlondon','eastky','montana','eastnc','martinsburg','easternshore','eastidaho','eastoregon','eauclaire','elko','elmira','elpaso','erie','eugene','evansville','fairbanks','fargo','farmington','fayar','fayetteville','fingerlakes','flagstaff','flint','shoals','florencesc','keys','fortcollins','fortdodge','fortsmith','fortwayne','frederick','fredericksburg','fresno','fortmyers','gadsden','gainesville','galveston','glensfalls','goldcountry','grandforks','grandisland','grandrapids','greatfalls','greenbay','greensboro','greenville','gulfport','norfolk','hanford','harrisburg','harrisonburg','hartford','hattiesburg','honolulu','cfl','helena','hickory','rockies','hiltonhead','holland','houma','houston','hudsonvalley','humboldt','huntington','huntsville','imperial','indianapolis','inlandempire','iowacity','ithaca','jxn','jackson','jacksontn','jacksonville','onslow','janesville','jerseyshore','jonesboro','joplin','kalamazoo','kalispell','kansascity','kenai','kpr','racine','killeen','kirksville','klamath','knoxville','kokomo','lacrosse','lafayette','tippecanoe','lakecharles','lakeland','loz','lancaster','lansing','laredo','lasalle','lascruces','lasvegas','lawrence','lawton','allentown','lewiston','lexington','limaohio','lincoln','littlerock','logan','longisland','losangeles','louisville','lubbock','lynchburg','macon','madison','maine','ksu','mankato','mansfield','masoncity','mattoon','mcallen','meadville','medford','memphis','mendocino','merced','meridian','milwaukee','minneapolis','missoula','mobile','modesto','mohave','monroe','monroemi','monterey','montgomery','morgantown','moseslake','muncie','muskegon','myrtlebeach','nashville','nh','newhaven','neworleans','blacksburg','newyork','lakecity','nd','nesd','nmi','wheeling','northernwi','newjersey','northmiss','northplatte','nwct','nwga','nwks','enid','ocala','odessa','ogden','okaloosa','oklahomacity','olympic','omaha','oneonta','orangecounty','oregoncoast','orlando','outerbanks','owensboro','palmsprings','panamacity','parkersburg','pensacola','peoria','philadelphia','phoenix','csd','pittsburgh','plattsburgh','poconos','porthuron','portland','potsdam','prescott','provo','pueblo','pullman','quadcities','raleigh','rapidcity','reading','redding','reno','providence','richmondin','richmond','roanoke','rmn','rochester','rockford','roseburg','roswell','sacramento','saginaw','salem','salina','saltlakecity','sanangelo','sanantonio','sandiego','sandusky','slo','sanmarcos','santabarbara','santafe','santamaria','sarasota','savannah','scottsbluff','scranton','seattle','sfbay','sheboygan','showlow','shreveport','sierravista','siouxcity','siouxfalls','siskiyou','skagit','southbend','southcoast','sd','juneau','ottumwa','seks','semo','carbondale','smd','swv','miami','southjersey','swks','swmi','marshall','natchez','bigbend','swva','spacecoast','spokane','springfieldil','springfield','pennstate','statesboro','staugustine','stcloud','stgeorge','stillwater','stjoseph','stlouis','stockton','susanville','syracuse','tallahassee','tampa','terrehaute','texarkana','texoma','thumb','toledo','topeka','treasure','tricities','tucson','tulsa','tuscaloosa','tuscarawas','twinfalls','twintiers','easttexas','up','utica','valdosta','ventura','vermont','victoriatx','visalia','waco','washingtondc','waterloo','watertown','wausau','wenatchee','quincy','westky','westmd','westernmass','westslope','wv','wichitafalls','wichita','williamsport','wilmington','winchester','winstonsalem','worcester','wyoming','yakima','york','youngstown','yubasutter','yuma','zanesville']
+# sites = ['akroncanton','albanyga','albany','albuquerque','altoona','amarillo','ames','anchorage','annapolis','annarbor','appleton','asheville','ashtabula','athensga','athensohio','atlanta','auburn','augusta','austin','bakersfield','baltimore','batonrouge','battlecreek','beaumont','bellingham','bemidji','bend','billings','binghamton','bham','bismarck','bloomington','bn','boise','boone','boston','boulder','bgky','bozeman','brainerd','brownsville','brunswick','buffalo','butte','capecod','catskills','cedarrapids','cenla','centralmich','cnj','chambana','charleston','charlestonwv','charlotte','charlottesville','chattanooga','chautauqua','chicago','chico','chillicothe','cincinnati','clarksville','cleveland','clovis','collegestation','cosprings','columbiamo','columbia','columbusga','columbus','cookeville','corpuschristi','corvallis','chambersburg','dallas','danville','daytona','dayton','decatur','nacogdoches','delaware','delrio','denver','desmoines','detroit','dothan','dubuque','duluth','eastco','newlondon','eastky','montana','eastnc','martinsburg','easternshore','eastidaho','eastoregon','eauclaire','elko','elmira','elpaso','erie','eugene','evansville','fairbanks','fargo','farmington','fayar','fayetteville','fingerlakes','flagstaff','flint','shoals','florencesc','keys','fortcollins','fortdodge','fortsmith','fortwayne','frederick','fredericksburg','fresno','fortmyers','gadsden','gainesville','galveston','glensfalls','goldcountry','grandforks','grandisland','grandrapids','greatfalls','greenbay','greensboro','greenville','gulfport','norfolk','hanford','harrisburg','harrisonburg','hartford','hattiesburg','honolulu','cfl','helena','hickory','rockies','hiltonhead','holland','houma','houston','hudsonvalley','humboldt','huntington','huntsville','imperial','indianapolis','inlandempire','iowacity','ithaca','jxn','jackson','jacksontn','jacksonville','onslow','janesville','jerseyshore','jonesboro','joplin','kalamazoo','kalispell','kansascity','kenai','kpr','racine','killeen','kirksville','klamath','knoxville','kokomo','lacrosse','lafayette','tippecanoe','lakecharles','lakeland','loz','lancaster','lansing','laredo','lasalle','lascruces','lasvegas','lawrence','lawton','allentown','lewiston','lexington','limaohio','lincoln','littlerock','logan','longisland','losangeles','louisville','lubbock','lynchburg','macon','madison','maine','ksu','mankato','mansfield','masoncity','mattoon','mcallen','meadville','medford','memphis','mendocino','merced','meridian','milwaukee','minneapolis','missoula','mobile','modesto','mohave','monroe','monroemi','monterey','montgomery','morgantown','moseslake','muncie','muskegon','myrtlebeach','nashville','nh','newhaven','neworleans','blacksburg','newyork','lakecity','nd','nesd','nmi','wheeling','northernwi','newjersey','northmiss','northplatte','nwct','nwga','nwks','enid','ocala','odessa','ogden','okaloosa','oklahomacity','olympic','omaha','oneonta','orangecounty','oregoncoast','orlando','outerbanks','owensboro','palmsprings','panamacity','parkersburg','pensacola','peoria','philadelphia','phoenix','csd','pittsburgh','plattsburgh','poconos','porthuron','portland','potsdam','prescott','provo','pueblo','pullman','quadcities','raleigh','rapidcity','reading','redding','reno','providence','richmondin','richmond','roanoke','rmn','rochester','rockford','roseburg','roswell','sacramento','saginaw','salem','salina','saltlakecity','sanangelo','sanantonio','sandiego','sandusky','slo','sanmarcos','santabarbara','santafe','santamaria','sarasota','savannah','scottsbluff','scranton','seattle','sfbay','sheboygan','showlow','shreveport','sierravista','siouxcity','siouxfalls','siskiyou','skagit','southbend','southcoast','sd','juneau','ottumwa','seks','semo','carbondale','smd','swv','miami','southjersey','swks','swmi','marshall','natchez','bigbend','swva','spacecoast','spokane','springfieldil','springfield','pennstate','statesboro','staugustine','stcloud','stgeorge','stillwater','stjoseph','stlouis','stockton','susanville','syracuse','tallahassee','tampa','terrehaute','texarkana','texoma','thumb','toledo','topeka','treasure','tricities','tucson','tulsa','tuscaloosa','tuscarawas','twinfalls','twintiers','easttexas','up','utica','valdosta','ventura','vermont','victoriatx','visalia','waco','washingtondc','waterloo','watertown','wausau','wenatchee','quincy','westky','westmd','westernmass','westslope','wv','wichitafalls','wichita','williamsport','wilmington','winchester','winstonsalem','worcester','wyoming','yakima','york','youngstown','yubasutter','yuma','zanesville']
 # sites = ['athensga']
-# sites = ['appleton','eauclaire', 'duluth', 'greenbay', 'janesville', 'racine', 'lacrosse', 'madison', 'milwaukee', 'northernwi', 'sheboygan', 'wausau']
+sites = ['appleton','eauclaire', 'duluth', 'greenbay', 'janesville', 'racine', 'lacrosse', 'madison', 'milwaukee', 'northernwi', 'sheboygan', 'wausau']
 shuffle(sites)
 # Shuffle sites so that I don't always do the same ones first (In case there is an error)
 fp = 'C:\Users\dasso\Desktop\Craigslist\Trucks_' + str(datetime.now()) + '.csv'
 
 scrapedOutput = pandas.DataFrame()
 daysSinceUpdated = 10
-pool = ThreadPool(40)
-rssString = raw_input("Please enter the entire RSS feed from craigslist\n")
-rssString = rssString[rssString.find("craigslist.org"):]
+# pool = ThreadPool(40)
+rssString = raw_input("Please enter the entire RSS feed from craigslist. Or enter 'truck' or 'duplex'\n")
 
-if rssString == "":
-    rssString = '.craigslist.org/search/cta?auto_bodytype=6&auto_bodytype=7&auto_bodytype=9&format=rss'
+if rssString == 'truck':
+    rssString = 'https://athensga.craigslist.org/search/cta?auto_bodytype=6&auto_bodytype=7&auto_bodytype=9&format=rss'
+elif rssString == 'duplex':
+    rssString = 'https://athensga.craigslist.org/search/apa?format=rss'
+rssString = rssString[rssString.find(".craigslist.org"):]
 for s in sites:
     print('Searching ' + s)
     # url = 'https://' + s + '.craigslist.org/search/ppa?format=rss&query=washer%20dryer'
