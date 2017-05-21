@@ -14,7 +14,7 @@ import json
 import urllib2
 from multiprocessing.pool import ThreadPool
 from tqdm import tqdm
-
+import sys
 # import pyodbc
 # import mysql.connector
 from random import shuffle
@@ -194,7 +194,10 @@ fp = 'C:\Users\dasso\Desktop\Craigslist\Trucks_' + str(datetime.now()) + '.csv'
 scrapedOutput = pandas.DataFrame()
 daysSinceUpdated = 10
 # pool = ThreadPool(40)
-rssString = raw_input("Please enter the entire RSS feed from craigslist. Or enter 'truck' or 'duplex'\n")
+if len(sys.argv) > 1:
+    rssString = sys.argv[1]
+else:
+    rssString = raw_input("Please enter the entire RSS feed from craigslist. Or enter 'truck' or 'duplex'\n")
 
 if rssString == 'truck':
     rssString = 'https://athensga.craigslist.org/search/cta?auto_bodytype=6&auto_bodytype=7&auto_bodytype=9&format=rss'
