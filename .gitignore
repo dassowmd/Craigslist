@@ -8,6 +8,10 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
+# Ignore settings file
+C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistAPI\CL_Listings\settings.py
+C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistAPI\CL_Listings\settings.pyc
+
 # Windows Installer files
 *.cab
 *.msi

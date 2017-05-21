@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CraigsListRSSFeed.py" afterPath="$PROJECT_DIR$/CraigsListRSSFeed.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/CraigsListRSSFeed.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="483">
-              <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+              <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -703,7 +703,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495304944750</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Add sys.argv[1] to CraigslistRSSFeed.py so that search term can be called via command line">
+      <created>1495386961852</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1495386961852</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -717,13 +724,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1078" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17318133" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284091" sideWeight="0.49861714" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39871383" sideWeight="0.34097195" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3125" sideWeight="0.49071515" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284091" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3284091" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44431818" sideWeight="0.49624655" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17768377" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.49861714" order="3" side_tool="false" content_ui="tabs" />
@@ -783,7 +789,8 @@
     <MESSAGE value="Add EbayAPI.py file" />
     <MESSAGE value="Wrap Ebay API dictionary flattener in try except to catch encoding errors" />
     <MESSAGE value="Add sys.argv so that the search term can be called directly from the command line.&#10;Try calling EBay 3 times before failing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sys.argv so that the search term can be called directly from the command line.&#10;Try calling EBay 3 times before failing" />
+    <MESSAGE value="Add sys.argv[1] to CraigslistRSSFeed.py so that search term can be called via command line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add sys.argv[1] to CraigslistRSSFeed.py so that search term can be called via command line" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1150,7 +1157,7 @@
     <entry file="file://$PROJECT_DIR$/CraigsListRSSFeed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
-          <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
+          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
