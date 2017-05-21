@@ -9,8 +9,8 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Ignore settings file
-C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistAPI\CL_Listings\settings.py
-C:\Users\dasso\OneDrive\Documents\GitHub\Craigslist\CraigslistAPI\CL_Listings\settings.pyc
+settings.py
+settings.pyc
 
 # Windows Installer files
 *.cab
