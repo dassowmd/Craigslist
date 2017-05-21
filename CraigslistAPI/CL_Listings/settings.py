@@ -75,22 +75,22 @@ WSGI_APPLICATION = 'CL_Listings.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-# DATABASES = {
-#     'default':  {
-#         'ENGINE': 'django.db.backends.mysql',
-# 	'OPTIONS':
-# 		{
-# 		'read_default_file':'/home/dassowmd/Craigslist/CL_Config.cnf',
-# 		}
-#     }
-# }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'CraigslistSQLiteDB',
+    'default':  {
+        'ENGINE': 'django.db.backends.mysql',
+	'OPTIONS':
+		{
+		'read_default_file':'/home/dassowmd/Craigslist/CL_Config.cnf',
+		}
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'CraigslistSQLiteDB',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
