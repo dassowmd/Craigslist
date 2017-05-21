@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49d0f987-6762-4567-9a3f-99bc6cebecc9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -710,7 +709,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495386961852</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added settings.py and settings.pyc to gitignore file">
+      <created>1495387674292</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1495387674292</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -790,7 +796,8 @@
     <MESSAGE value="Wrap Ebay API dictionary flattener in try except to catch encoding errors" />
     <MESSAGE value="Add sys.argv so that the search term can be called directly from the command line.&#10;Try calling EBay 3 times before failing" />
     <MESSAGE value="Add sys.argv[1] to CraigslistRSSFeed.py so that search term can be called via command line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sys.argv[1] to CraigslistRSSFeed.py so that search term can be called via command line" />
+    <MESSAGE value="Added settings.py and settings.pyc to gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added settings.py and settings.pyc to gitignore file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
