@@ -9,8 +9,8 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Ignore settings file
-/settings.py
-/settings.pyc
+/CraigslistAPI/CL_Listings/settings.py
+/CraigslistAPI/CL_Listings/settings.pyc
 
 # Windows Installer files
 *.cab
